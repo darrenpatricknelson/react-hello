@@ -22,14 +22,14 @@ const user = {
   interests: ['soccer', 'hiking', 'surfing', 'clubbing', 'gaming', 'camping']
 };
 
-const returnInfo = (key) => {
+const renderInfo = (key) => {
   let info = user[key];
   let informationOutput = document.getElementById('informationOutput');
 
-  let renderInfo = '';
+  let renderValue = '';
 
   if (typeof info === 'object') {
-    renderInfo = (
+    renderValue = (
       <ul className="interestList">
         {Object.values(info).map((value, key) => (
           <li key={key}>{value}</li>
@@ -37,23 +37,19 @@ const returnInfo = (key) => {
       </ul>
     );
   } else if (key === 'profilePicture') {
-    renderInfo = <img src={info} alt="{Profile picture}"></img>;
+    renderValue = <img src={info} alt="{Profile picture}"></img>;
   } else {
-    renderInfo = info;
+    renderValue = info;
   }
 
-  ReactDOM.render(renderInfo, informationOutput);
+  ReactDOM.render(renderValue, informationOutput);
 };
 
 const buttons = (
   <div>
     <div className="buttonContainer">
       {Object.keys(user).map((value, key) => (
-        <Button
-          variant="secondary"
-          onClick={(e) => returnInfo(value, e)}
-          key={key}
-        >
+        <Button variant="secondary" onClick={() => renderInfo(value)} key={key}>
           {value}
         </Button>
       ))}
