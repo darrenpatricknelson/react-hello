@@ -36,8 +36,10 @@ const returnInfo = (key) => {
         ))}
       </ul>
     );
-  } else if (key == 'profilePicture') {
-    renderInfo = <img src={info}></img>;
+  } else if (key === 'profilePicture') {
+    renderInfo = (
+      <img src={info} alt="{Profile picture of Darren Nelson}"></img>
+    );
   } else {
     renderInfo = info;
   }
