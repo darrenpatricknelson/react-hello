@@ -1,0 +1,17 @@
+.buttonContainer {
+  margin: 10px;
+  text-align: center;
+}
+
+.buttonContainer button {
+  margin: 5px;
+}
+
+.informationOutput {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.interestList {
+  list-style-type: none;
+}
